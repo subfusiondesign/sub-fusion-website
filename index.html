@@ -3,158 +3,396 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub Fusion | Premium Graphic Design</title>
+<title>Sub Fusion One</title>
 
 <style>
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:Arial, sans-serif;
 }
 
 body{
-  background:#050505;
-  color:white;
+background:#050816;
+color:white;
+overflow-x:hidden;
 }
 
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:20px 50px;
-  background:#0b0b0b;
-  position:sticky;
-  top:0;
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 10%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-  font-size:24px;
-  font-weight:bold;
-  color:#3b82f6;
+display:flex;
+align-items:center;
+gap:10px;
+font-size:24px;
+font-weight:bold;
+color:#3b82f6;
+}
+
+.logo img{
+width:50px;
+height:50px;
+border-radius:50%;
 }
 
 nav a{
-  color:white;
-  margin-left:20px;
-  text-decoration:none;
+color:white;
+margin-left:30px;
+text-decoration:none;
+transition:0.3s;
 }
 
-/* HERO */
+nav a:hover{
+color:#3b82f6;
+}
+
 .hero{
-  text-align:center;
-  padding:120px 20px;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(to bottom,#050816,#0f172a);
+}
+
+.hero-content img{
+width:180px;
+border-radius:50%;
+margin-bottom:20px;
+box-shadow:0 0 30px #3b82f6;
 }
 
 .hero h1{
-  font-size:60px;
-  color:#3b82f6;
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#3b82f6;
 }
 
 .hero p{
-  font-size:18px;
-  color:#ccc;
-  margin-top:10px;
+max-width:700px;
+margin:auto;
+font-size:20px;
+color:#cbd5e1;
+line-height:1.8;
 }
 
-/* BUTTONS */
+.buttons{
+margin-top:30px;
+}
+
 .btn{
-  display:inline-block;
-  margin-top:25px;
-  padding:15px 25px;
-  background:#3b82f6;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
+display:inline-block;
+padding:15px 35px;
+margin:10px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
 }
 
-/* SECTIONS */
+.btn-primary{
+background:#3b82f6;
+color:white;
+}
+
+.btn-primary:hover{
+background:white;
+color:#3b82f6;
+}
+
+.btn-secondary{
+border:2px solid #3b82f6;
+color:#3b82f6;
+}
+
+.btn-secondary:hover{
+background:#3b82f6;
+color:white;
+}
+
 section{
-  padding:80px 50px;
-  text-align:center;
+padding:100px 10%;
 }
 
-h2{
-  color:#3b82f6;
-  margin-bottom:20px;
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:60px;
+color:#3b82f6;
 }
 
-/* CARDS */
-.cards{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
 }
 
 .card{
-  background:#111;
-  padding:20px;
-  width:250px;
-  border-radius:10px;
-  border:1px solid #222;
+background:#111827;
+padding:40px 30px;
+border-radius:20px;
+transition:0.4s;
+text-align:center;
+cursor:pointer;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:30px;
-  background:#0b0b0b;
-  margin-top:50px;
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(59,130,246,0.5);
 }
+
+.card h3{
+margin-bottom:15px;
+font-size:28px;
+}
+
+.card p{
+color:#cbd5e1;
+line-height:1.7;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 25px #3b82f6;
+}
+
+.about{
+text-align:center;
+}
+
+.about p{
+max-width:900px;
+margin:auto;
+line-height:2;
+font-size:19px;
+color:#cbd5e1;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin-top:30px;
+padding:18px 40px;
+background:#25D366;
+color:white;
+border-radius:50px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.contact a:hover{
+transform:scale(1.1);
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+color:#94a3b8;
+margin-top:50px;
+}
+
+@media(max-width:768px){
+
+header{
+padding:20px;
+}
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.section-title{
+font-size:35px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">SUB FUSION</div>
-  <div>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+<header>
 
-<!-- HERO -->
-<div class="hero">
-  <h1>Premium Graphic Design</h1>
-  <p>We build modern brands, flyers, logos & ads that attract customers</p>
-  <a class="btn" href="https://wa.me/233596609308">Hire Us on WhatsApp</a>
+<div class="logo">
+<img src="https://i.imgur.com/8Km9tLL.png">
+<span>SUB FUSION</span>
 </div>
 
-<!-- SERVICES -->
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<img src="https://i.imgur.com/8Km9tLL.png">
+
+<h1>PREMIUM <span>GRAPHIC</span> DESIGN</h1>
+
+<p>
+Luxury branding, flyer designs, perfume ads,
+social media creatives, logo creation and modern
+business identity designs made by King Gideon.
+</p>
+
+<div class="buttons">
+
+<a href="#portfolio" class="btn btn-primary">
+View Portfolio
+</a>
+
+<a href="https://wa.me/233596609308" class="btn btn-secondary">
+WhatsApp Me
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 <section id="services">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">Logo Design</div>
-    <div class="card">Flyer Design</div>
-    <div class="card">Social Media Ads</div>
-    <div class="card">Brand Identity</div>
-  </div>
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Logo Design</h3>
+<p>
+Modern and premium logo designs for businesses,
+brands and luxury companies.
+</p>
+</div>
+
+<div class="card">
+<h3>Flyer Design</h3>
+<p>
+Professional flyer and poster designs that attract
+customers and boost visibility.
+</p>
+</div>
+
+<div class="card">
+<h3>Perfume Ads</h3>
+<p>
+Luxury perfume advertisement designs with modern
+branding aesthetics.
+</p>
+</div>
+
+<div class="card">
+<h3>Social Media Ads</h3>
+<p>
+Creative social media promotional designs for
+Instagram, Facebook and WhatsApp.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Sub Fusion</h2>
-  <p>
-    Sub Fusion is a premium graphic design brand created by King Gideon,
-    focused on modern, clean and attractive designs for businesses.
-  </p>
+<section id="portfolio">
+
+<h2 class="section-title">Portfolio</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>King Gideon</p>
-  <p>📞 0596609308 / 0245605670</p>
-  <a class="btn" href="https://wa.me/233596609308">Chat on WhatsApp</a>
+<section class="about" id="about">
+
+<h2 class="section-title">About Sub Fusion</h2>
+
+<p>
+Sub Fusion One is a premium graphic design brand
+focused on luxury visuals, modern business identity,
+creative advertising and high-end branding.
+Created by King Gideon, the brand combines
+technology, creativity and luxury aesthetics
+to deliver professional designs that stand out.
+</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<p>
+Ready to build your brand and create premium visuals?
+Let's work together today.
+</p>
+
+<a href="https://wa.me/233596609308">
+Chat on WhatsApp
+</a>
+
 </section>
 
 <footer>
-  © 2026 Sub Fusion. All rights reserved.
+
+© 2026 SUB FUSION ONE — Designed by King Gideon
+
 </footer>
 
 </body>
