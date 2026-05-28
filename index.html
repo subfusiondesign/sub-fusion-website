@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sub Fusion One</title>
+<title>SUB FUSION ONE</title>
 
 <style>
 
@@ -11,8 +11,8 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
 scroll-behavior:smooth;
-font-family:Arial, sans-serif;
 }
 
 body{
@@ -21,65 +21,76 @@ color:white;
 overflow-x:hidden;
 }
 
+/* NAVBAR */
+
 header{
 position:fixed;
 top:0;
 width:100%;
-padding:20px 10%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.6);
+background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:24px;
+font-size:28px;
 font-weight:bold;
 color:#3b82f6;
+display:flex;
+align-items:center;
+gap:12px;
 }
 
-.logo img{
+.logo-circle{
 width:50px;
 height:50px;
 border-radius:50%;
+background:linear-gradient(45deg,#3b82f6,#06b6d4);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+font-size:22px;
+box-shadow:0 0 25px #3b82f6;
 }
 
 nav a{
 color:white;
-margin-left:30px;
 text-decoration:none;
+margin-left:25px;
 transition:0.3s;
+font-size:17px;
 }
 
 nav a:hover{
 color:#3b82f6;
 }
 
+/* HERO */
+
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-background:linear-gradient(to bottom,#050816,#0f172a);
+padding:140px 20px 100px;
+background:
+radial-gradient(circle at top,#0f172a,#050816);
 }
 
-.hero-content img{
-width:180px;
-border-radius:50%;
-margin-bottom:20px;
-box-shadow:0 0 30px #3b82f6;
+.hero-content{
+max-width:900px;
 }
 
 .hero h1{
-font-size:65px;
-margin-bottom:20px;
+font-size:75px;
+line-height:1.1;
+margin-bottom:25px;
 }
 
 .hero span{
@@ -87,35 +98,35 @@ color:#3b82f6;
 }
 
 .hero p{
-max-width:700px;
-margin:auto;
 font-size:20px;
+line-height:1.9;
 color:#cbd5e1;
-line-height:1.8;
+max-width:750px;
+margin:auto;
 }
 
 .buttons{
-margin-top:30px;
+margin-top:40px;
 }
 
 .btn{
 display:inline-block;
-padding:15px 35px;
-margin:10px;
-border-radius:40px;
+padding:18px 40px;
+border-radius:50px;
 text-decoration:none;
 font-weight:bold;
-transition:0.3s;
+margin:10px;
+transition:0.4s;
 }
 
 .btn-primary{
 background:#3b82f6;
 color:white;
+box-shadow:0 0 20px rgba(59,130,246,0.5);
 }
 
 .btn-primary:hover{
-background:white;
-color:#3b82f6;
+transform:translateY(-5px);
 }
 
 .btn-secondary{
@@ -128,16 +139,20 @@ background:#3b82f6;
 color:white;
 }
 
+/* SECTION */
+
 section{
-padding:100px 10%;
+padding:100px 8%;
 }
 
 .section-title{
 text-align:center;
-font-size:45px;
+font-size:50px;
 margin-bottom:60px;
 color:#3b82f6;
 }
+
+/* SERVICES */
 
 .services{
 display:grid;
@@ -147,27 +162,45 @@ gap:30px;
 
 .card{
 background:#111827;
-padding:40px 30px;
-border-radius:20px;
+padding:35px;
+border-radius:25px;
 transition:0.4s;
-text-align:center;
 cursor:pointer;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
+transition:0.6s;
+}
+
+.card:hover::before{
+left:100%;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 0 25px rgba(59,130,246,0.5);
+box-shadow:0 0 30px rgba(59,130,246,0.4);
 }
 
 .card h3{
-margin-bottom:15px;
 font-size:28px;
+margin-bottom:15px;
 }
 
 .card p{
+line-height:1.8;
 color:#cbd5e1;
-line-height:1.7;
 }
+
+/* PORTFOLIO */
 
 .gallery{
 display:grid;
@@ -175,74 +208,102 @@ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:25px;
 }
 
-.gallery img{
-width:100%;
+.gallery-item{
+position:relative;
+overflow:hidden;
 border-radius:20px;
-transition:0.4s;
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 0 25px #3b82f6;
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
 }
+
+.gallery-item:hover img{
+transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:20px;
+background:linear-gradient(transparent,rgba(0,0,0,0.9));
+}
+
+.overlay h3{
+font-size:24px;
+}
+
+/* ABOUT */
 
 .about{
 text-align:center;
 }
 
 .about p{
-max-width:900px;
+max-width:850px;
 margin:auto;
 line-height:2;
-font-size:19px;
+font-size:20px;
 color:#cbd5e1;
 }
+
+/* CONTACT */
 
 .contact{
 text-align:center;
 }
 
-.contact a{
+.contact p{
+font-size:20px;
+color:#cbd5e1;
+}
+
+.contact-btn{
 display:inline-block;
-margin-top:30px;
-padding:18px 40px;
+margin-top:35px;
+padding:18px 45px;
 background:#25D366;
 color:white;
 border-radius:50px;
 text-decoration:none;
 font-size:20px;
 font-weight:bold;
-transition:0.3s;
+transition:0.4s;
 }
 
-.contact a:hover{
+.contact-btn:hover{
 transform:scale(1.1);
 }
 
+/* FOOTER */
+
 footer{
+padding:35px;
 text-align:center;
-padding:30px;
 background:#020617;
 color:#94a3b8;
-margin-top:50px;
+margin-top:60px;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
-
-header{
-padding:20px;
-}
 
 nav{
 display:none;
 }
 
 .hero h1{
-font-size:45px;
+font-size:48px;
 }
 
 .section-title{
-font-size:35px;
+font-size:38px;
 }
 
 }
@@ -255,8 +316,8 @@ font-size:35px;
 <header>
 
 <div class="logo">
-<img src="https://i.imgur.com/8Km9tLL.png">
-<span>SUB FUSION</span>
+<div class="logo-circle">SF</div>
+SUB FUSION
 </div>
 
 <nav>
@@ -273,14 +334,16 @@ font-size:35px;
 
 <div class="hero-content">
 
-<img src="https://i.imgur.com/8Km9tLL.png">
-
-<h1>PREMIUM <span>GRAPHIC</span> DESIGN</h1>
+<h1>
+PREMIUM <span>CREATIVE</span><br>
+DESIGN STUDIO
+</h1>
 
 <p>
-Luxury branding, flyer designs, perfume ads,
-social media creatives, logo creation and modern
-business identity designs made by King Gideon.
+Modern graphic design, luxury branding,
+social media creatives, flyer designs,
+business visuals and premium digital experiences
+created by King Gideon.
 </p>
 
 <div class="buttons">
@@ -290,7 +353,7 @@ View Portfolio
 </a>
 
 <a href="https://wa.me/233596609308" class="btn btn-secondary">
-WhatsApp Me
+Chat on WhatsApp
 </a>
 
 </div>
@@ -308,32 +371,32 @@ WhatsApp Me
 <div class="card">
 <h3>Logo Design</h3>
 <p>
-Modern and premium logo designs for businesses,
-brands and luxury companies.
+Luxury logos and premium brand identities
+for modern businesses and startups.
 </p>
 </div>
 
 <div class="card">
 <h3>Flyer Design</h3>
 <p>
-Professional flyer and poster designs that attract
-customers and boost visibility.
-</p>
-</div>
-
-<div class="card">
-<h3>Perfume Ads</h3>
-<p>
-Luxury perfume advertisement designs with modern
-branding aesthetics.
+Professional flyers, event posters and
+business advertisements that attract customers.
 </p>
 </div>
 
 <div class="card">
 <h3>Social Media Ads</h3>
 <p>
-Creative social media promotional designs for
-Instagram, Facebook and WhatsApp.
+Creative Instagram, Facebook and WhatsApp
+graphics for business promotion.
+</p>
+</div>
+
+<div class="card">
+<h3>Brand Identity</h3>
+<p>
+Complete visual branding systems
+for premium businesses and companies.
 </p>
 </div>
 
@@ -343,17 +406,37 @@ Instagram, Facebook and WhatsApp.
 
 <section id="portfolio">
 
-<h2 class="section-title">Portfolio</h2>
+<h2 class="section-title">Featured Portfolio</h2>
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
-
+<div class="gallery-item">
 <img src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1200&auto=format&fit=crop">
+<div class="overlay">
+<h3>Luxury Branding</h3>
+</div>
+</div>
 
-<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1200&auto=format&fit=crop">
+<div class="overlay">
+<h3>Perfume Advertising</h3>
+</div>
+</div>
 
+<div class="gallery-item">
 <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop">
+<div class="overlay">
+<h3>Modern Design</h3>
+</div>
+</div>
+
+<div class="gallery-item">
+<img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop">
+<div class="overlay">
+<h3>Creative Posters</h3>
+</div>
+</div>
 
 </div>
 
@@ -361,15 +444,16 @@ Instagram, Facebook and WhatsApp.
 
 <section class="about" id="about">
 
-<h2 class="section-title">About Sub Fusion</h2>
+<h2 class="section-title">About Us</h2>
 
 <p>
-Sub Fusion One is a premium graphic design brand
-focused on luxury visuals, modern business identity,
-creative advertising and high-end branding.
-Created by King Gideon, the brand combines
-technology, creativity and luxury aesthetics
-to deliver professional designs that stand out.
+Sub Fusion One is a premium creative design studio
+focused on modern branding, luxury visuals,
+business identity systems and high-quality
+digital graphics. Built by King Gideon,
+the brand combines creativity, technology
+and modern aesthetics to create designs
+that stand out professionally.
 </p>
 
 </section>
@@ -379,11 +463,10 @@ to deliver professional designs that stand out.
 <h2 class="section-title">Contact Us</h2>
 
 <p>
-Ready to build your brand and create premium visuals?
-Let's work together today.
+Let's build your business into a premium brand.
 </p>
 
-<a href="https://wa.me/233596609308">
+<a href="https://wa.me/233596609308" class="contact-btn">
 Chat on WhatsApp
 </a>
 
